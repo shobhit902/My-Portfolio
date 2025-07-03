@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   BrowserRouter,
   createBrowserRouter,
@@ -11,7 +11,8 @@ import RootLayout from "./Layout/RootLayout";
 import Home from "./Components/Header/Home";
 import About from "./Components/Header/About";
 import Contact from "./Components/Header/Contact";
-import Projects from "./Components/Header/Projects";
+import GitHub from "./Components/Header/GitHub";
+import Blogs from "./Components/Header/Blogs";
 
 function App() {
   const router = createBrowserRouter(
@@ -20,10 +21,17 @@ function App() {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="projects" element={<Projects />} />
+        <Route path="github" element={<GitHub />} />
+        <Route path="blogs" element={<Blogs />} />
       </Route>
     )
   );
+
+  useEffect(() => {
+    document.body.style.backgroundColor = "#f0f0f0";
+
+    console.log("black");
+  }, []);
 
   return (
     <>
